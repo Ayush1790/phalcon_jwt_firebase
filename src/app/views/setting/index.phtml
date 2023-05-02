@@ -1,0 +1,19 @@
+<?php
+include_once APP_PATH.'/assets/header.php';
+echo "<h2>Settings</h2><br>";
+echo $this->tag->form("setting/add");
+echo "Select title";
+echo Phalcon\Tag::select(["title",
+["tag1"=>"With Tag" , "tag2"=>"without tag"],"class" => "form-control"
+]);
+echo "<br>";
+echo "Price";
+echo $this->tag->numericField(["price", 'class' => 'form-control']);
+echo "<br>";
+echo "Stock";
+echo $this->tag->numericField(["stock", 'class' => 'form-control']);
+echo "<br>";
+echo "Zip Code";
+echo $this->tag->numericField(["zipcode", 'class' => 'form-control']);
+echo "<br>";
+echo $this->tag->submitButton(["Add", 'class' => 'btn btn-primary ']);

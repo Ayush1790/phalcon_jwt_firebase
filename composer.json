@@ -1,0 +1,17 @@
+{
+    "name": "cedcoss/phalcon_jwt_firebase",
+    "autoload": {
+        "psr-4": {
+            "Cedcoss\\PhalconJwtFirebase\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ayush1790",
+            "email": "ayushgupta@cedcoss.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.4"
+    }
+}

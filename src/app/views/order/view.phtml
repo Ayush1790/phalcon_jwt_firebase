@@ -1,0 +1,22 @@
+<?php include_once APP_PATH.'/assets/header.php';?>
+<table class="table table-bordered table-striped" >
+    <caption>table showing details of the ordered products</caption>
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>Zipcode</th>
+            <th>Products</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach ($data as $key => $value) {
+            echo "<tr><td>$value[c_name]</td><td>$value[c_address]</td><td>$value[zipcode]</td><td>$value[product]</td>
+            <td>$value[qty]</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
+

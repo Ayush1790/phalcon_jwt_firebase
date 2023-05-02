@@ -1,0 +1,42 @@
+<?php include_once APP_PATH . '/assets/header.php'; ?>
+<!-- Add Order Page -->
+<div style="margin-left:370px ;width:400px; background-color:aliceblue;border-radius:10px;margin-top:5px" \
+ class="text-center p-2">
+    <h2>Add Orders</h2>
+    <?php echo $this->tag->form("order/add"); ?>
+    <br>
+    <p>
+        <label for="c_name">Customer Name</label>
+        <?php echo $this->tag->textField(["name", 'class' => 'form-control']); ?>
+    </p>
+    <p>
+        <label for="c_address">Customer Address</label>
+        <?php echo $this->tag->textField(["address", 'class' => 'form-control']); ?>
+    </p>
+    <p>
+        <label for="zipcode">ZipCode</label>
+        <?php echo $this->tag->numericField(["zipcode", 'class' => 'form-control']); ?>
+    </p>
+    <p>
+        <label for="product">Product</label>
+        <select name="product" id="" class="form-control text-center">
+            <?php $order = $this->db->fetchAll(
+                "SELECT `name` FROM products",
+                \Phalcon\Db\Enum::FETCH_ASSOC
+            );
+            foreach ($order as $key => $value) {
+                echo "<option>$value[name]</option>";
+            } ?>
+        </select>
+    </p>
+    <p>
+        <label for="stock">Quantity</label>
+        <?php echo $this->tag->numericField(["qty", 'class' => 'form-control']); ?>
+    </p>
+
+    <p>
+        <?php echo $this->tag->submitButton(["order", 'class' => 'btn btn-primary']); ?>
+    </p>
+
+    </form>
+</div>

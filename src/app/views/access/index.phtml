@@ -1,0 +1,16 @@
+<form action="access/save" method="post">
+<select name="role" id="role" class="form-select">
+    <option>guest</option>
+    <option>user</option>
+    <option>Admin</option>
+</select>
+<select name="controller" id="controller" class="form-select">
+    <?php
+    foreach ($this->session->get('AccessControl') as $key => $value) {
+        echo "<option>$key</option>";
+    }
+    ?>
+</select>
+<select name="action" id="action" class="form-select"></select>
+<input type="submit" value="submit" class="btn btn-primary">
+</form>
